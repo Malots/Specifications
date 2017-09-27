@@ -1,0 +1,14 @@
+{
+    "name": "malots/specifications",
+    "description": "Specification pattern composer package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "leovene",
+            "email": "leo.ochoalopes@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
