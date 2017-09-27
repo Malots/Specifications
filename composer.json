@@ -10,5 +10,19 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "php": "^7.0",
+        "phpunit/phpunit": "^6.3.1"
+    },
+    "autoload": {
+      "psr-4": {
+        "Malots\\Specifications\\": "src/Specifications",
+        "Malots\\SpecificationsTest\\": "tests/SpecificationsTest"
+      }
+    },
+    "config": {
+      "preferred-install": "dist",
+      "optimize-autoloader": true,
+      "process-timeout": 30
+    }
 }

@@ -6,9 +6,30 @@
  * Time: 09:17
  */
 
-namespace Specifications;
+namespace Malots\Specifications;
 
 
-abstract class Specification {
-	public abstract function IsSatisfiedBy($obj);
+abstract class Specification implements SpecificationInterface {
+
+	public abstract function isSatisfiedBy($candidate);
+
+	public function andCondition(SpecificationInterface $candidate) {
+		return new AndSpecification($this,$candidate);
+	}
+
+	public function andNotCondition(SpecificationInterface $candidate) {
+		return new AndNotSpecification($this,$candidate);
+	}
+
+	public function notCondition(SpecificationInterface $candidate) {
+		return new NotSpecification($candidate);
+	}
+
+	public function orNotCondition(SpecificationInterface $candidate) {
+		return new OrNotSpecification($this,$candidate);
+	}
+
+	public function orCondition(SpecificationInterface $candidate) {
+		return new OrSpecification($this,$candidate);
+	}
 }
